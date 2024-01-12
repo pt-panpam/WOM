@@ -1,14 +1,28 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, View, Image } from "react-native";
 import React from "react";
 import chaticon from "../../assets/chat.png";
 import { bottomicon, logo2 } from "../Common CSS/pagescss";
 import logo from "../../assets/logo2.png";
+import { Ionicons } from "@expo/vector-icons";
 
-const TopNavBar = () => {
+const TopNavBar = ({ navigation, page }) => {
   return (
     <View style={styles.container}>
       <Image source={logo} style={logo2} />
-      <Image source={chaticon} style={bottomicon} />
+      {page === "MainPage" && (
+        <TouchableOpacity onPress={() => navigation.navigate("AllChats")}>
+          <View style={styles.button}>
+            <Image source={chaticon} style={bottomicon} />
+          </View>
+        </TouchableOpacity>
+      )}
+      {page === "My_UserProfile" && (
+        <TouchableOpacity onPress={() => navigation.navigate("Setting1")}>
+          <View style={styles.button}>
+            <Ionicons name="settings" size={24} color="black" />
+          </View>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -24,6 +38,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     position: "absolute",
     top: 0,
-    backgroundColor: "black",
+    backgroundColor: "white",
   },
 });

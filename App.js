@@ -13,6 +13,13 @@ import ForgotPassword_ChangePassword from "./SRC/Screens/LoginSignUp/ForgotPassw
 import ForgotPassword_EnterEmail from "./SRC/Screens/LoginSignUp/ForgotPassword/ForgotPassword_EnterEmail";
 import ForgotPassword_EnterVerificationCode from "./SRC/Screens/LoginSignUp/ForgotPassword/ForgotPassword_EnterVerificationCode";
 import MainPage from "./SRC/Screens/MainPage/MainPage";
+import AllChats from "./SRC/Screens/ChatSection/AllChats";
+import SearchPage from "./SRC/Screens/MainPage/SearchPage";
+import Notification from "./SRC/Screens/MainPage/NotificationPage";
+import NotificationPage from "./SRC/Screens/MainPage/NotificationPage";
+import My_UserProfile from "./SRC/Screens/Profile/My_UserProfile";
+import AddMemory from "./SRC/Screens/MainPage/AddMemory";
+import Setting1 from "./SRC/Screens/Settings/Setting1";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +27,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{ headerShown: false, animation: "slide_from_right" }}
+        screenOptions={{ headerShown: false, animation: "none" }}
       >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup_EnterEmail" component={Signup_EnterEmail} />
@@ -57,6 +64,16 @@ export default function App() {
           component={ForgotPassword_AccountRecoverd}
         />
         <Stack.Screen name="MainPage" component={MainPage} />
+        <Stack.Screen
+          name="AllChats"
+          component={AllChats}
+          options={{ animation: "slide_from_bottom" }}
+        />
+        <Stack.Screen name="SearchPage" component={SearchPage} />
+        <Stack.Screen name="NotificationPage" component={NotificationPage} />
+        <Stack.Screen name="My_UserProfile" component={My_UserProfile} />
+        <Stack.Screen name="AddMemory" component={AddMemory} />
+        <Stack.Screen name="Setting" component={Setting1} />
       </Stack.Navigator>
     </NavigationContainer>
   );

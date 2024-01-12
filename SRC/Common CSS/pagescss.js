@@ -2,7 +2,6 @@ module.exports = {
   containerFull: {
     width: "100%",
     height: "100%",
-    backgroundColor: "White",
     alignItems: "center",
     justifyContent: "center",
   },
