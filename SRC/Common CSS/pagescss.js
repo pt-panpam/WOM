@@ -4,6 +4,7 @@ module.exports = {
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
+   
   },
   logo1: {
     height: 300,
